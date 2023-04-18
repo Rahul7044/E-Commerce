@@ -1,12 +1,16 @@
+import React from 'react';
 
 import './App.css';
+import Header from './components/Layouts/Header';
+import Store from './Pages/Store';
 
 function App() {
+
   return (
-    <div >
-            Heyy Rahul      
-    </div>
+    <>
+      <Header />
+      <Store />
+    </>
   );
 }
-
 export default App;
