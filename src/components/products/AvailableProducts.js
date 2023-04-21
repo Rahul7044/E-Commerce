@@ -2,7 +2,7 @@ import React from 'react'
 import ProductItem from './ProductItem'
 import './AvailableProducts.css'
 
-const productsArr = [
+export const productsArr = [
     {
         id:'l1',
         title: 'Colors',
@@ -28,9 +28,7 @@ const productsArr = [
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
     }
 ]
-
 const AvailableProducts = () => {
-
     const product = productsArr.map((item) => (
         <ProductItem
             key={item.id}
@@ -39,15 +37,12 @@ const AvailableProducts = () => {
             price={item.price}
             image={item.imageUrl} />
     ))
-
     return (
         <>
             <div className='store'>
                 <div className="Container">{product}</div>
             </div>
-
         </>
     )
 }
-
-export default AvailableProducts
+export default AvailableProducts;

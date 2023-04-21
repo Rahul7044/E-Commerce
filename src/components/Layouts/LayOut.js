@@ -1,14 +1,13 @@
 import React from 'react'
 import Header from './Header'
-import { Outlet } from 'react-router-dom'
 
-const LayOut = () => {
+const LayOut = (props) => {
   return (
     <>
     <Header></Header>
-    <Outlet></Outlet>
+    {props.children}
+
   </>
   )
 }
-
-export default LayOut
+export default LayOut;

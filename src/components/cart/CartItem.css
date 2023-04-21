@@ -1,40 +1,44 @@
 .items {
-    text-align: justify;
-    font-weight: 600;
-  }
-  
-  .title {
-    padding: 1rem;
-  }
-  
-  .image-title {
-    display: flex;
-    align-items: center;
-  }
-  #img {
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    margin: 5%;
-  }
-  #img img {
-    width: 50px;
-  }
-  
-  .price {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  
-  .quantity {
-    display: flex;
-    align-items: center;
-    width: 45px;
-    margin-top: 40px;
-  }
-  .quantity button {
-    background-color: red;
-  }
+  text-align: justify;
+  font-weight: 600;
+}
+.title {
+  padding: 1rem;
+}
+.image-title {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  width: 45px;
+  margin-top: 40px;
+}
+.quantity button {
+  background-color: red;
+}
+.quantity input{
+  border-width: 0cm;
+}
+
+#img {
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#img img {
+  width: 50px;
+}
+.quantity input {
+  width: 45px;
+  text-align: center;
+}
