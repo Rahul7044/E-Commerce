@@ -76,13 +76,9 @@ const ProductDetail = () => {
               <br />
             </Col>
             <Col xs="13">
-              <h4>Abhinas</h4>
+              <h4>Rahul</h4>
             </Col>
-            <Col className="mb-4">Very Good Product</Col>
-            <Col xs="13">
-              <h4>Likun</h4>
-            </Col>
-            <Col className="mb-4">Overall Good</Col>
+            <Col className="mb-4">That's Amazing Product</Col>
           </Row>
         </Col>
       </Row>
