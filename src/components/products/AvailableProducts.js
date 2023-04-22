@@ -31,18 +31,20 @@ export const productsArr = [
 const AvailableProducts = () => {
     const product = productsArr.map((item) => (
         <ProductItem
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            price={item.price}
-            image={item.imageUrl} />
-    ))
-    return (
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          price={item.price}
+          imageUrl={item.imageUrl}
+        />
+      ));
+    
+      return (
         <>
-            <div className='store'>
-                <div className="Container">{product}</div>
-            </div>
+          <div className="store">
+            <div className="Container">{product}</div>
+          </div>
         </>
-    )
-}
+      );
+    };
 export default AvailableProducts;

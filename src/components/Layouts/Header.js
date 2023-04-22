@@ -3,11 +3,13 @@ import { FaCartPlus } from "react-icons/fa";
 import { Badge, Container, Dropdown, Navbar } from "react-bootstrap";
 import Cart from "../cart/Cart";
 import CartContext from "../../store/CartContext";
+import AuthContext from "../../store/AuthContext";
 import { NavLink } from "react-router-dom";
 import classes from "./Header.module.css";
 
 function Header() {
   const ctx = useContext(CartContext);
+  const authCtx = useContext(AuthContext);
   const [showCart, setShowCart] = useState(false);
 
   let quantity = 0;
@@ -21,6 +23,9 @@ function Header() {
   const hideCart = () => {
     setShowCart(false);
   };
+  const logoutHandler = () => {
+    authCtx.logout();
+  };
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -31,7 +36,13 @@ function Header() {
           <NavLink to="/Home">Home</NavLink>
           <NavLink to="/Store">Store</NavLink>
           <NavLink to="/About">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          {!authCtx.isLogin && <NavLink to="/login">Login</NavLink>}
+          {authCtx.isLogin && <NavLink to="/contact">Contact</NavLink>}
+          {authCtx.isLogin && (
+            <button onClick={logoutHandler} className={classes.button}>
+              Logout
+            </button>
+          )}
 
           <Dropdown onToggle={showingCart} align="end">
             <Dropdown.Toggle variant="dark">
