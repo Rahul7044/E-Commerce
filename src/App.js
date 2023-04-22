@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 
 import "./App.css";
@@ -10,10 +10,29 @@ import ContactUs from "./Pages/ContactUs";
 import ProductDetail from "./components/products/ProductDetail";
 import AuthContext from "./store/AuthContext";
 import AuthForm from "./components/Auth/AuthForm";
+import CartContext from "./store/CartContext";
 
 function App() {
   const authCtx = useContext(AuthContext);
   const history = useHistory();
+  const cartCtx = useContext(CartContext);
+  useEffect(() => {
+    if (authCtx.isLogin) {
+      const email = localStorage.getItem("email");
+      fetch(
+        `https://crudcrud.com/api/a45653ee98cb48c7be256782a3687989/${email}`
+      )
+        .then((res) => {
+          return res.json().then((data) => {
+            for (const key in data) {
+              cartCtx.getItem({ ...data[key]});
+              console.log(data[key]._id);
+            }
+          });
+        })
+        .catch((err) => alert(err.message));
+    }
+  }, [authCtx.isLogin]);
   return (
     <>
       <LayOut>
