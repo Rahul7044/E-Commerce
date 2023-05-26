@@ -14,7 +14,7 @@ const ContactUs = () => {
     setForm("Submitting...");
     try {
       const response = await fetch(
-        "https://react-http-efb57-default-rtdb.firebaseio.com/contacts.json",
+        "https://ecommerce-website-646ee-default-rtdb.firebaseio.com/contacts.json",
         {
           method: "POST",
           body: JSON.stringify(contactData),
